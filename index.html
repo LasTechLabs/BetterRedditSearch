@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Better Reddit Search</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="Assets/Icons/search-solid-inverted.svg">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="column" style="min-height: 100%">
+        <div class="row heading">
+            <span>Better Reddit Search <object data="Assets/Icons/search-solid.svg"></object></span>
+        </div>
+        <div class="row shoutout">
+            <span>Made By <a href="https://twitter.com/lastechlabs" target="_blank"><object
+                        data="Assets/Icons/twitter-brands.svg"></object>LasTechLabs</a></span>
+        </div>
+        <div class="row main" style="justify-content: center; align-items: stretch; align-self: stretch; flex: 1">
+            <div class="column main">
+                <div class="row subheading">
+                    Post Contains:
+                </div>
+                <div class="row inputbox">
+                    <div class="column relative textInput">
+                        <input required type="text" id="any_title">
+                        <label>Any of these words</label>
+                    </div>
+                </div>
+                <div class="row demo">
+                    <span>Eg: cat dog - </span><span>contains either "cat" or "dog" or both</span>
+                </div>
+                <div class="row inputbox">
+                    <div class="column relative textInput">
+                        <input required type="text" id="all_title">
+                        <label>All of these words</label>
+                    </div>
+                </div>
+                <div class="row demo">
+                    <span>Eg: cat dog - </span><span>contains both "cat" and "dog"</span>
+                </div>
+                <div class="row inputbox">
+                    <div class="column relative textInput">
+                        <input required type="text" id="exact_title">
+                        <label>This exact phrase</label>
+                    </div>
+                </div>
+                <div class="row demo">
+                    <span>Eg: cat dog - </span><span>contains "cat dog"</span>
+                </div>
+                <div class="row inputbox">
+                    <div class="column relative textInput">
+                        <input required type="text" id="none_title">
+                        <label>None of these words</label>
+                    </div>
+                </div>
+                <div class="row demo">
+                    <span>Eg: cat dog - </span><span>contains neither "cat" nor "dog"</span>
+                </div>
+                <div class="row subheading">
+                    Search For:
+                </div>
+                <div class="row">
+                    <div class="column relative search_type">
+                        <button class="search_type_button selected" id="search_all">All (Default)</button>
+                    </div>
+                    <div class="column relative search_type">
+                        <button class="search_type_button" id="search_title">Title Only</button>
+                    </div>
+                    <div class="column relative search_type">
+                        <button class="search_type_button" id="search_content">Content Only</button>
+                    </div>
+                </div>
+                <div class="row subheading">
+                    Subreddits:
+                </div>
+                <div class="row inputbox">
+                    <div class="column relative textInput">
+                        <input required type="text" id="check_subs">
+                        <label>Check these subs</label>
+                    </div>
+                </div>
+                <div class="row demo">
+                    <span>Eg: askreddit ELI5 - </span><span>checks posts from "askreddit" and "ELI5"</span>
+                </div>
+                <div class="row inputbox">
+                    <div class="column relative textInput">
+                        <input required type="text" id="dont_subs">
+                        <label>Exclude these subs</label>
+                    </div>
+                </div>
+                <div class="row demo">
+                    <span>Eg: askreddit ELI5 - </span><span>excludes posts from "askreddit" and "ELI5"</span>
+                </div>
+                <div class="row subheading">
+                    Date Posted:
+                </div>
+                <div class="row inputbox dateInput">
+                    <div class="column relative dateInput">
+                        <input required type="date" id="date_start">
+                        <label>Earliest date to check</label>
+                    </div>
+                </div>
+                <div class="row inputbox dateInput">
+                    <div class="column relative dateInput">
+                        <input required type="date" id="date_end">
+                        <label>Latest date to check</label>
+                    </div>
+                </div>
+                <div class="row submit">
+                    <button id="search_button">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js" async defer></script>
+
+    <script src="/__/firebase/8.6.5/firebase-app.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+    <script src="/__/firebase/init.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+@font-face {
+  font-family:"Roboto";
+  src: url("Assets/Fonts/Roboto-Regular.ttf");
+}
+
+:root{
+  --reddit-blue: rgb(206,227,248);
+  --reddit-gray: rgb(238, 238, 238);
+  --reddit-light-gray: rgb(140, 140, 140);
+  --reddit-white: rgb(246, 246, 246);
+  --reddit-deep-blue: rgb(150, 185, 215);
+  --twitter-blue: rgb(29, 161, 242);
+}
+
+html, body{
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;  
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--reddit-gray);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.column {
+  flex-basis: 100%;
+  display:flex;
+  flex-direction: column;
+}
+
+.column.main{
+  background-color: var(--reddit-white);
+  padding: 20px 50px 80px 50px;
+}
+
+.row.heading{
+    background-color: var(--reddit-blue);
+    font-size: 48px;
+    padding: 20px 20px 5px 20px;
+    text-align: center;
+}
+.row.heading span{
+  border-bottom: 2px solid black;
+  padding: 0px 5px 0px 5px;
+}
+
+.row.heading span object{
+  width: 45px;
+}
+
+.row.shoutout{
+  padding: 0px 20px 10px 20px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center; 
+  background-color: var(--reddit-blue);
+  text-align: left;
+  font-size: 18px;
+}
+.row.shoutout span{
+  position: relative;
+}
+
+.row.shoutout span a object{
+  pointer-events: none;
+  padding-right: 3px;
+  position:relative;
+  filter: invert(66%) sepia(55%) saturate(5920%) hue-rotate(177deg) brightness(101%) contrast(90%);
+  bottom: -5px;
+  width: 22px;
+}
+
+.row.shoutout span a{
+  color: var(--twitter-blue);
+}
+
+.row.inputbox{
+  margin-left: 10px;
+  margin-top: 15px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.row.inputbox.dateInput{
+  border:none;
+}
+.column.dateInput{
+  border-bottom: 1px solid black;
+}
+
+.row.subheading{
+  border-bottom: 1px solid black;
+  left:-10px;
+  margin-top: 20px;
+  font-size: 30px;
+  text-align: left;
+}
+
+.row.demo{
+  padding: 2px 20px 0px 20px;
+  font-size: 12px;
+}
+
+.row.demo span:nth-of-type(1){
+  margin-right: 0.4em;
+}
+
+.row.submit{
+  padding: 30px 0px 0px 0px;
+  justify-content: center;
+}
+
+.submit button{
+  font-size: 30px;
+  padding: 15px;
+  border: 1px solid var(--reddit-deep-blue);
+  border-radius: 4px;
+}
+
+.submit button:hover{
+  border: 1px solid green;
+  background-color: lightgreen;
+}
+
+.search_type_button{
+  margin:20px 10px 0px 10px; 
+  padding: 5px; 
+  font-size:18px;
+}
+
+.search_type_button.selected{
+  background-color: var(--reddit-deep-blue);
+  border: 1px solid black;
+  box-shadow: none;
+  border-radius:4px;
+  outline: 0;
+}
+
+label{
+  position: absolute;
+  left: 5px;
+  top: 0px;
+  transition: 0.1s;
+  pointer-events: none;
+  font-size: 20px;
+  color: rgb(91, 112, 131);
+}
+input{
+  font-size: 20px;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 10px 0px 5px 5px;
+}
+.relative{
+  position: relative;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+  top: -10px;
+  font-size: 14px;
+  color: rgb(140, 140, 140);
+}
+
+input[type="date"] ~ label{
+  top: -10px;
+  font-size: 14px;
+}
+
+button:hover{
+  cursor:pointer;
+}
+
+button:active, button:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+}
+
+@media screen and (min-width: 800px) {
+  .column {
+    flex: 0 1 50%;
+  }
+  .row.shoutout{
+    justify-content: flex-start;
+  }
+  .column.textInput{
+    flex: 1 1 auto;
+  }
+  .column.dateInput{
+    flex: 0 1 auto;
+  }
+
+  .column.relative.search_type{
+    flex:0 1 33%;
+  }
+  
+  ._20 {
+  flex: 2;
+  }
+  ._25 {
+    flex: 2.5;
+  }
+  ._55 {
+    flex: 5.5;
+  }
+  ._60{
+      flex: 6.0;
+  }
+  ._80{
+    flex: 8.0
+  }
+  ._100{
+      flex: 10.0;
+      background-color: blue
+  }
+}
